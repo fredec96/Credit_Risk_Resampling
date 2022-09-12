@@ -20,27 +20,31 @@ Accurately identifying the `1` (high-risk loan) is the most important part of th
 
 ## Results
 
-* Machine Learning Model 1, Original Data:
-  * Balanced Accuracy: The balanced accuracy score for this model was 0.95 which can be interpretted as a fairly strong score, however the precision and recall scores will provide deeper insight into the circumstances that created the balanced accuracy score.
-  * Precision: The precision score for the `1` (high-risk loan) of 0.85 was the lowest score in the classification report, which we can understand by looking at the confusion matrix and seeing that the model predicted 665 instances of `1` (high-risk loan), but 102 of those instances were false positives and actually a `0` (healthy loan).
-  * Recall: The recal score for the `1` (high-risk loan) of was 0.91 which we can understand by looking at the confusion matrix and seeing that the model predicted 665 instances of `1` (high-risk loan), but miscategorized 56 un-healthy loans as healthy loans.  
-
-
-* Machine Learning Model 2, Over Sampled Data:
-  * Balanced Accuracy: Using the oversampled data the balanced accuracy score improved to 0.99 up from 0.95 using the original data
-  * Precision: We can see that the precision value did slightly decrease from 0.85 to 0.84 using the oversampled data due to 14 additional instances of healthy loans being classified as high-risk.
-  * Recall: Recall was improved to an impressive score of 0.99 with only 4 instances of high-risk loans being classified as healthy loans. 
-  
-
-## Summary
+* Balanced Accuracy
+    * Machine Learning Model 1, Original Data: The balanced accuracy score for this model was 0.95 which can be interpretted as a fairly strong score, however the precision and recall scores will provide deeper insight into the circumstances that created the balanced accuracy score.
+    
+    * Machine Learning Model 2, Over Sampled Data: Using the oversampled data the balanced accuracy score improved to 0.99 up from 0.95 using the original data
 
 ![Balanced Accuracy Scores Compared](Resources/balanced_accuracy.png)
 
+
+* Precision 
+    * Machine Learning Model 1, Original Data: The precision score for the `1` (high-risk loan) of 0.85 was the lowest score in the classification report, which we can understand by looking at the confusion matrix and seeing that the model predicted 665 instances of `1` (high-risk loan), but 102 of those instances were false positives and actually a `0` (healthy loan).
+    
+    * Machine Learning Model 2, Over Sampled Data: We can see that the precision value did slightly decrease from 0.85 to 0.84 using the oversampled data due to 14 additional instances of healthy loans being classified as high-risk.
+
+
+* Recall 
+  * Machine Learning Model 1, Original Data: The recal score for the `1` (high-risk loan) of was 0.91 which we can understand by looking at the confusion matrix and seeing that the model predicted 665 instances of `1` (high-risk loan), but miscategorized 56 un-healthy loans as healthy loans.  
+  
+  * Machine Learning Model 2, Over Sampled Data: Recall was improved to an impressive score of 0.99 with only 4 instances of high-risk loans being classified as healthy loans. 
+
 ![Classification Reports Compared](Resources/classification_report.png)
+
 
 ![Confusion Matrix Compared](Resources/confusion_matrix.png)
 
-
+## Summary
 
 Overall the model trained on the oversampled data performs very well and has better results than the model trained on the original data, as seen in the classification reports and balanced accuracy scores. For that reason the model trained on the over sampled data is the model I would recommend a lender use. The model trained on the original data outperformed the over sample in only one category, precision. But as I stated previously, erring on the side of caution is not necessarily a bad thing to see when testing a model, and the change from the original model is minimal. 
 
